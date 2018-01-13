@@ -17,4 +17,88 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/UbuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="showUbu"
+        android:text="@string/button_ubu"
+        app:layout_constraintStart_toStartOf="@+id/BrunoButton"
+        app:layout_constraintTop_toBottomOf="@+id/BrunoButton" />
+
+    <Button
+        android:id="@+id/BrunoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="52dp"
+        android:onClick="showBruno"
+        android:text="@string/button_bruno"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Bruno"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bruno" />
+
+    <ImageView
+        android:id="@+id/Ubu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="192dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="25dp"
+        android:rotation="90"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ubu" />
+
+    <ImageView
+        android:id="@+id/Fenway"
+        android:layout_width="273dp"
+        android:layout_height="405dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BrunoButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fenway" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="showFenway"
+        android:text="@string/button_fenway"
+        app:layout_constraintStart_toStartOf="@+id/UbuButton"
+        app:layout_constraintTop_toBottomOf="@+id/UbuButton" />
+
 </android.support.constraint.ConstraintLayout>
