@@ -93,6 +93,9 @@ public class DisplayMessageActivity extends AppCompatActivity
     /** Called when the user taps the Ubu button */
     public void showUbu(View buttonView)
     {
+        Intent intent  = new Intent(this, FullScreenDog.class);
+        intent.putExtra("dogName", "Ubu");
+        startActivity(intent);
         if (ubuToggle == 0 || brunoToggle == 1 || fenwayToggle == 1)
         {
             ubuImage.setVisibility(View.VISIBLE);
@@ -112,6 +115,9 @@ public class DisplayMessageActivity extends AppCompatActivity
     /** Called when the user taps the Bruno button */
     public void showBruno(View buttonView)
     {
+        Intent intent  = new Intent(this, FullScreenDog.class);
+        intent.putExtra("dogName", "Bruno");
+        startActivity(intent);
         if (brunoToggle == 0 || ubuToggle == 1 || fenwayToggle == 1)
         {
             brunoImage.setVisibility(View.VISIBLE);
@@ -130,6 +136,9 @@ public class DisplayMessageActivity extends AppCompatActivity
 
     public void showFenway(View buttonView)
     {
+        Intent intent  = new Intent(this, FullScreenDog.class);
+        intent.putExtra("dogName", "Fenway");
+        startActivity(intent);
         if (fenwayToggle == 0 || brunoToggle == 1 || ubuToggle == 1)
         {
             fenwayImage.setVisibility(View.VISIBLE);
@@ -145,6 +154,12 @@ public class DisplayMessageActivity extends AppCompatActivity
             fenwayToggle = 0;
         }
 
+    }
+
+    public void fullScreenButton(View buttonView)
+    {
+        Intent intent  = new Intent(this, FullScreenDog.class);
+        startActivity(intent);
     }
 
 }
