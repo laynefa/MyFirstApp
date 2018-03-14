@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,17 +22,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class FullScreenDog extends AppCompatActivity
+public class FullScreenDog extends Activity
 {
-
-    private int brunoToggle = 0;
-    private int ubuToggle = 0;
-    private int fenwayToggle = 0;
-    private ImageView brunoImage;
-    private ImageView ubuImage;
-    private ImageView fenwayImage;
-
-
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -73,10 +65,10 @@ public class FullScreenDog extends AppCompatActivity
         @Override
         public void run() {
             // Delayed display of UI elements
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                actionBar.show();
-            }
+            //ActionBar actionBar = getSupportActionBar();
+            //if (actionBar != null) {
+            //    actionBar.show();
+            //}
             mControlsView.setVisibility(View.VISIBLE);
         }
     };
@@ -108,11 +100,11 @@ public class FullScreenDog extends AppCompatActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_full_screen_dog);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
-        {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        //ActionBar actionBar = getSupportActionBar();
+        //if (actionBar != null)
+        //{
+        //    actionBar.setDisplayHomeAsUpEnabled(true);
+        //}
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -125,20 +117,20 @@ public class FullScreenDog extends AppCompatActivity
         if (dogName.equals("Bruno"))
         {
             mContentView = findViewById(R.id.Bruno);
-            Glide.with(this).load(R.drawable.bruno).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into((ImageView) mContentView);
+            Glide.with(this).load(R.drawable.bruno).into((ImageView) mContentView);
             mContentView.setVisibility(View.VISIBLE);
 
         }
         else if (dogName.equals("Ubu"))
         {
             mContentView = findViewById(R.id.ubu);
-            Glide.with(this).load(R.drawable.ubu).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into((ImageView)mContentView);
+            Glide.with(this).load(R.drawable.ubu).thumbnail(0.5f).into((ImageView)mContentView);
             mContentView.setVisibility(View.VISIBLE);
         }
         else if (dogName.equals("Fenway"))
         {
             mContentView = findViewById(R.id.fenway);
-            Glide.with(this).load(R.drawable.fenway).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into((ImageView)mContentView);
+            Glide.with(this).load(R.drawable.fenway).thumbnail(0.5f).into((ImageView)mContentView);
             mContentView.setVisibility(View.VISIBLE);
         }
 
@@ -188,10 +180,10 @@ public class FullScreenDog extends AppCompatActivity
 
     private void hide() {
         // Hide UI first
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
+        //ActionBar actionBar = getSupportActionBar();
+        //if (actionBar != null) {
+        //    actionBar.hide();
+        //}
         mControlsView.setVisibility(View.GONE);
         mVisible = false;
 
@@ -204,7 +196,8 @@ public class FullScreenDog extends AppCompatActivity
     private void show() {
         // Show the system bar
         mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         mVisible = true;
 
         // Schedule a runnable to display UI elements after a delay

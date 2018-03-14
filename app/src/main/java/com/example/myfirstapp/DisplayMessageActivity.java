@@ -38,11 +38,14 @@ public class DisplayMessageActivity extends AppCompatActivity
         textView.setText(message + " number is " + phoneMessage);
 
         brunoImage = findViewById(R.id.Bruno);
-        Glide.with(this).load(R.drawable.bruno).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(brunoImage);
+        //Glide.with(this).load(R.drawable.bruno).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(brunoImage);
+        Glide.with(this).load(R.drawable.bruno).thumbnail(0.5f).into(brunoImage);
         ubuImage = findViewById(R.id.Ubu);
-        Glide.with(this).load(R.drawable.ubu).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(ubuImage);
+        //Glide.with(this).load(R.drawable.ubu).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(ubuImage);
+        Glide.with(this).load(R.drawable.ubu).thumbnail(0.5f).into(ubuImage);
         fenwayImage = findViewById(R.id.Fenway);
-        Glide.with(this).load(R.drawable.fenway).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(fenwayImage);
+        //Glide.with(this).load(R.drawable.fenway).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).thumbnail(0.5f).into(fenwayImage);
+        Glide.with(this).load(R.drawable.fenway).thumbnail(0.5f).into(fenwayImage);
 
         //BitmapFactory.Options options = new BitmapFactory.Options();
         //options.inJustDecodeBounds = true;
